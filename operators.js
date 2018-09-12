@@ -66,6 +66,49 @@ var w = 's';
 s = -s;
 console.log(s); //s is NaN
 
+//Equal and not-equal to:
+//Perform conversion before comparison
+//Use the sign (==) returns true if the operands are equal
+//Rules used:
+//Boolean -> Convert operands to number 0 and 1 then compare
+//String & Number -> convert string to number and compare
+//Object & primitive ->use valueof() on the object to get the primitive value
+//
+//Rules used in comparison:
+//null and undefined are equal
+//null and undefined cannot be converted into other values for checking
+//if either operand in NaN return false (for != return true)
+//Both objects? compare if same object*/
+//
+var c = 5; 
+var b = "5";
 
+console.log(c == b); //true
+
+var t = {valueOf(){return 5}};
+console.log(t == b); //true
+console.log(t == c); //true
+console.log(undefined == null); //true  because not the same value
+
+//Identically equal and Identically Not Equale To:
+//Uses ===
+//No conversion of opernds happens before testing for equality
+//Returns true if operands are equal without conversion
+var u = '7';
+var y = 7;
+console.log(u === y); //false
+console.log(undefined === null); //false because not the same type
+
+//Conditional Operators:
+//syntax: variable = boolean_exprr ? true_value : false_value;
+var max = (num1 > num2) ? num1 : num2; //assign variable max based on evaluation of expression, if true assign  num1, if false num2
+var num1 = 10;
+var num2 = 11;
+var maxNum = (num1 > num2)? num1 : num2;
+console.log(maxNum); //11
+
+
+//Comma operator: Allows execution of more than 1 operation in a single statement
+var h = 83, j = 'hr', u = false;
 
 
