@@ -47,3 +47,11 @@ setName(person); //although passed by value to function, the variable obj will p
 alert(person.name) //prints 'Micoud'
 
 
+//Checking type:
+//typeof: usefull to determine if a variable is a primitive
+//instanceof: check type of instance.
+//syntax: result = variable instanceof constructor 
+consoloe.log(person instanceof Object); //is variable person an Object
+console.log(colors.instanceof Array); //is variable colors an Array
+
+//all reference values are instances of object
