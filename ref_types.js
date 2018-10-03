@@ -87,3 +87,90 @@ names[names.length] = "Resop"; //add a name at end of array
 //The last item in the array is always length - 1
 
 
+//array detection in single global scope
+myArr = instanceof Array
+
+//array detection regardless of number of global scopes
+Array.isArray(myArr);
+
+
+//conversion methods
+// toString() and valueOf() return the same value when called on an array
+//return a comma sepated list of values in the array
+var colors = ['red','green','yellow'];
+colors.toString(); //red,green, yellow
+colors.valueOf();//red, green, yellow
+
+//using the join() method to construct string with different separator
+var team = ['John','Allex','Simon'];
+alert(team.join(";")); //prints John;Allex;Simon
+
+//toString(), toLocalString(), join() and valueOf() represent a null or 
+//empty array using an empty string 
+
+//Using an array as a Stack (to act as a LIFO container)
+//uses 2 methods:
+//push(): Inserts args at the end of the array, returns the array new length
+//pop(): Removes the last item the array and returns it.
+var products = new Array('Cows','Goats');
+var count = products.push('Sheep'); //inserts new item at the end returns the new size of the array
+
+var item = products.pop();//returns the last item in the array-'sheep'
+
+//Queue Methods
+//Restrict access in a FIFO fashion, a queue adds items at the end and retrives at the bottom
+//push() is used to add items at the end of the queue
+//shift() removes the first item of the array and returns it, decrements length of array by 1
+//Array can be used as a queue by combining push() and shift()
+
+var colors = ['red','green','yellow'];
+colors.push('green'); //adds 'green' at the end
+colors.length; //prints 4
+var firstColor = colors.shift();//removes 'red' and returns it, decrements array length by 1 
+//unshift(): adds an item(s) at the front of the array and returns the new length of the array
+//using unshift() and pop() can be used to simulate a queue in the opposite direction.
+
+//create a reverse queue
+var users = new Array('jack','jane','rose');
+users.unshift('kim'); //add an item at the front
+var user = users.pop(); //remove an item at the end and return it
+
+//Reordering Methods
+//deal with the reordering of items in the array
+//reverse() : reverses the order of items in array.
+var values = [1,2,3,4,5];
+values.reverse();
+console.log(values); //5,4,3,2,1
+
+//sort(): by default puts items in ascending order
+var numbers = [4,8,1,5,9];
+numbers.sort();
+console.log(numbers); //1,4,5,8,9
+//it works by converting items to strings and comparing the strings
+//this means 10 would come before 5 when string are compared, not a 
+//desired result.
+var items = [4,5,12,8];
+items.sort() //12,4,5,8
+
+//for ideal comparissons, the sort method is used together with a comparison 
+//function that takes 2 args and:
+//returns -ve number if first arg should come before the second
+//0 if both args are equal
+//+ number if first arg should come after the second arg
+function compare(value1, value2){
+	if(value1 < value2){
+		return -1;
+	}else if (value1 > value2){
+		return 1;
+	}else{
+		return 0;
+	}
+} //compare function
+
+//this function can be passed as an argument to the sort function
+var nums = [2,5,12,7,5];
+nums.sort(compare); //2,5,7,12
+
+//both reverse() and sort() return a reference to the array in which they were applied
+
+
