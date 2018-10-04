@@ -173,4 +173,39 @@ nums.sort(compare); //2,5,7,12
 
 //both reverse() and sort() return a reference to the array in which they were applied
 
+//Manipulation methods:
+//concat(): creates a copy of the array it is called on and appends the arguments at 
+//the end. It returns the newly constructed array.
+//If no arguments are found it simply creates a clone of the array and returns it.
+//The arguents can be an array or items
+//
+var color = ["red","green"];
+var color2 = color.concat("yellow");
+console.log(color2);//red, green, yellow
+var color3 = color2.concat(["blue","black"],"orange");
+console.log(color3); //red,green,yellow,blue,black,orange
+
+//slice(); //returns a section of the array
+var items = ["dog","cat","horse"];
+var slice1 = items.slice(1);//returns cat,horse
+var slice2 = items.slice(0,1);//returns dog, since it starts at 0, stops at 1
+
+//if either start or end is a negative number it is subtracted from the length of the array
+items.slice(-1);//returns (length - 1) >>cat
+
+//splice() //insert, delete or replace items in the middle of an array
+var products = ["shoes","pens","bag","shorts","books","beer","cup"];
+//delete: specify position of first item to delete and number of items to be deleted
+products.splice(2,4);//deletes 4 items starting at item position 2; returns, the array of deleted items
+//the array will now have; shoes,pen,cup
+//insertion: provide 3 or more arguments, starting position, 0 the number of itesm to delete, 
+//number or items to insert
+products.splice(2,0,"fruits");//insert item 'fruit' at array position 2
+
+//replacement: deletes items while simultaneously inserting items
+//3 arguments: start pos, number of items to delete, number of items to insert
+
+products.splice(2,1,"radio","phone");//delete 1 item at position 2 and insert 2 items at the same postion
+
+
 
