@@ -207,5 +207,56 @@ products.splice(2,0,"fruits");//insert item 'fruit' at array position 2
 
 products.splice(2,1,"radio","phone");//delete 1 item at position 2 and insert 2 items at the same postion
 
+//Location methods:2 methods, both accept 2 params, what to look for and where to start looking
+//indexOf(): Starts from the front of the array and moves forward to the back
+//lastIndexOf(): starts searching from the last item to the front
+//Both return the position of the item in the array or -1 if the item is not found
+//An identity comparison is used to compare the arguments by type and value(===)
+var numbers = [1,2,3,4,5,6,7,8,9,3];
+numbers.indexOf(5);//4
+numbers.indexOf(18); //-1
+numbers.indexOf('3'); //-1
+numbers.lastIdexOf(3); //9
 
+//Iterative methods:
+//EC5 defines 5 methods to iterate arrays, each accepts 2 args.
+//arg1: a function to run on each item
+//arg2: an optional scope object on which to run the function
+//The function passed to the methods takes 3 args: array item value, position of the 
+//item in the array and the array object itself
+//every(): Runs the given function for every item in the array and returns true if the 
+//function returns true for every item
+//filter(): runs the function and returns an array of items for which the function 
+//returns true
+//foreach(): Runs the given function for each item in the array, has no return value
+//map(): runs the  given function and return the result of each function call in 
+//an array
+//some(): runs the given function and returns true if the function returns 
+//true for any one item
+//
+//All the methods do not change the values in the array
+//
+//every(): check if all numbers are greater than 0 in array();
 
+var numbers = [2,5,6,8,1,9,0];
+var hasNoZeroDigit =  numbers.every(function(item,index,array){
+	return item > 0;
+});
+console.log(hasNoZeroDigit); //false
+
+//foreach()
+var numbers = [2,4,6,8,10];
+numbers.foreach(function(item,index,array){
+	console.log(item * 10);
+}
+
+//Reduction Methods
+//reduce():iterate over items and build up  value to be returned
+//accepts two args: a function that accepts four args: the previous value,current value,items index,array object
+//an optional initial value apon which the reduction is based
+//any item returned from the function is passed as an argument for the next item
+var values = [1,2,3,4,5];
+var sum = values.reduce(function(prev,curr,index,array){
+	return prev + curr;
+});
+console.log(sum);
