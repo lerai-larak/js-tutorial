@@ -46,4 +46,30 @@ alert(result); //false
 // typeOf() returns "boolean" for primitive boolean but 'object' for Boolean reference types.
 // Recomended never use the Boolean type, always use the primitive.
 
+//Number types
+var numberObject = new Number(10);
+//overrides valueOf() toLocaleString() and toString() 
+//valueOf() returns the primitive value. The other two methods return the number as a string
+//toString(): optionally accepts another argument for the radix of the number
+numberObject.toString(8); //prints 10 in octal format
+numberObject.toFixed(2); //prints to 2 decimal places
+numberObject.toExponetial(6)//prints in expontial format
 
+
+//String type
+var myStr = new String("My Jospe");
+//valueOf(), toString() and toLocalString() all return the object primitive string value
+
+myStr.length; //prints number of characters in the string
+
+// String type methods
+//character methods
+
+var words = new String("this is a trial");
+words.charAt(3); //prints 's'
+
+words.charCodeAt(1); //prints the character code that represents char at position 1
+//i.e '104' is the character code for lower case 'h'
+//
+//Using bracket notation to access characters
+words[2] //prints 'i'
