@@ -73,3 +73,28 @@ words.charCodeAt(1); //prints the character code that represents char at positio
 //
 //Using bracket notation to access characters
 words[2] //prints 'i'
+
+//string manipulation methods
+var str1 = "Hello";
+var str2 = "World";
+var result = str1.concat(str2); //prints Hello World
+
+//three methods used to create strings from substrings
+//slice(), substr() and substring()
+
+var string1 = "Ready for the next year!";
+var s1 = string1.slice(6,9); //prints 'for'
+
+var s2 = string1.substring(0,12); //prints 'Ready for th'
+var s3 = string1.substr(18,3); //the 2nd paramenter in substr() indicates the number of characters to return//prints ' ye'
+
+//negative args
+var str2 = "Hello World";
+var st1 = str2.slice(-4); //prints 'orld', takes length() + negative arg
+var st2 = str2.substring(-4); //prints 'Hello World'  all negative numbers are converted to 0
+var st3 = str2.substr(-6); //prints ' World' negative 1st arg is treated as length of str plus the number
+//for negative 2nd arg it is converted to 0
+//
+//String Location methods
+
+
