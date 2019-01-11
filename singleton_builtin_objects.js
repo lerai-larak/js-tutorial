@@ -25,4 +25,40 @@ eval("alert(message)");  //context of eval method
 //variables and funstions created in eval() are not hoisted since they are contained in 
 //a string when the code is being parsed. They are only created at time of eval() execution
 //In strict mode, variables and function inside eval() are not available outside
+//
+//
+//Global object properties: undefined, NaN, Infinity, (Reference type constructors: Object,
+//Array, Function, Boolean, String, Number, Date, RegExp, Error, EvalError, RangeError, 
+//ReferenceError, SyntaxError, TypeError, URIError)
+//
+//The window object:
+//Browsers implement this object as a way to access the global object directly (global object 
+//delegate). All variables and functions declared in global scope become proerties 
+//on the window object
 
+var color = 'red'; //declare global variable
+
+//define global function
+function getColor(){
+	console.log(window.color);
+}
+
+window.getColor(); //Red
+
+//Another way of getting the global object
+var global = function(){
+	return this;
+}();
+
+//Math object: Contains mathematical info and formulae
+Math.E; //2.71828184
+Math.LN10; //The natural logarithm of 10->2.3025
+Math.LOG10E //the base 10 logaritm of e
+
+//min() and max()
+var max = Math.max(3,5,8,6); //8
+var min = Math.max(8,29,23,5);//5
+
+//get max value in an array
+var values = [2,6,8,7];
+var max = Math.max.apply(Math, values);
