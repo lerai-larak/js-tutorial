@@ -125,4 +125,25 @@ location.replace('http:mail.google.com'); //user cant click back to previous pag
 location.realod(); //reloads page (from cache if nothing has changed)
 location.reload(true); //forces fresh reload from the server
 
+//Navigator object: the standard for browser identification on the client
+navigator.appCodeName; //Name of the browser, typically Mozilla
+navigator.appName; //full browser name
+navigator.appVersion; //version of the browser
+navigator.mimeTypes; //mimetypes registred with the browser
+navigator.onLine; //if browser is connected to internet
+navigator.platform; //os the browser is running on
+navigator.plugins; //list of all instaled plugins
+navigator.product; //name of the product; typically gecko
+navigator.userAgent; //user agent string of the browser
+
+//History object:represents the users navigation history since the window was first used
+//is a property if window and so every window, tab or frame has its own history object
+//urls cannot be known for security reasons but can be navigated back and forward
+history.go(-1);  //go back 1 page 
+history.go(2); //go forward 2 pages
+history.go('www.google.com'); //go to first entrty of this url in history
+//if not found do nothing
+history.back(); //goes back 1 page
+history.forward();// goes forward 1 page
+history.length(); //indicates the number of items in the history stack
 
