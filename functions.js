@@ -72,7 +72,8 @@ console.log(sayHello.length); //prints 1
 // prototype: the actual location of all instance methods for reference types
 // eg. toString() and valueOf()
 //
-//apply() & call(): both call the function with a specific this value and therefore set the value of the this object inside the function body
+//apply() & call(): both call the function with a specific this value and therefore 
+//set the value of the this object inside the function body
 
 //using call()
 function sum(num1.num2){
