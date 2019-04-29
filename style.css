@@ -9,3 +9,16 @@
   padding:40px;
   color:white;
 }
+
+.user{
+  color:red;
+  font-weight:700;
+}
+
+.admin{
+  color:green;
+  font-weight:400;
+  font-family:Arial;
+}
+
+

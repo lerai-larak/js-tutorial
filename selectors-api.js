@@ -41,3 +41,20 @@ if(document.body.matchesSelector("body.page1"){
   //nextElementSibling
 //
 
+//HTML5
+//getElementsByClassName(); gets all elements with the specified class name
+var elements = document.getElementsByClassName("myclass"); //NodeList containing
+//all elements with that class name in the document tree.
+
+var target = document.getElementsByClassName("admin");
+target[0].classList; //get all the classes applied to this element.
+
+//The classList property is of type TokenList and has methods that allow
+  //addition, removal, toggling and checking of values
+var list = target[0];
+list.length; //number of items in list
+list.add('user'); //add class to list
+list.remove('admin') //removes class from list
+list.toggle('user'); //removes class if there and adds if not.
+list.contains('admin'); //checks if class has class 'admin'
+

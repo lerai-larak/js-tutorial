@@ -222,3 +222,18 @@ function outputAttributes(element){
 }
 
 
+
+//HTML5
+//Defines more interaction with Javascript than HTML4 spec
+//Additions include:
+document.getElemenentsByClassName("user current"); //will return a nodelist of 
+//all elements in the document with the classes 'user' and 'current' in any order.
+var target = document.getElementById('admin').getElementsByClassName("ul");
+//gets a nodelist of all lists inside the element with id 'admin'.
+
+//The classList property
+//Provides an easier way to manipulate classes in an element
+//It is an instance of DOMTokenList and provides the number of items it contains
+//and any item can be accessed via item(). It also has methods like:
+//add(value), contains(value), remove(value), toogle(value)
+//
