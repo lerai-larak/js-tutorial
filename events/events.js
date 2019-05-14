@@ -9,3 +9,9 @@
 //
 //Event capturing works in the opposite way
 //
+//Defince function to be called as an event handler
+//Code executing as an event handler has access to everything 
+//in the global scope.
+function showMsg(){
+  alert('Event type: ' + event.type + '\n' + 'Element id: ' + event.target.id);
+}

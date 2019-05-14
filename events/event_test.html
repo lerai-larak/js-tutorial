@@ -1,7 +1,10 @@
 <html>
-  <head><title>Testing events </title></head>
+  <head>
+    <title>Testing events </title>
+    <script src="events.js" type="text/javascript"></script>
+  </head>
   <body>
-    <p>This is a test of event</p>
-    <div id="div1">Click Me</div>
+    <p onclick="showMsg();" id="p1">This is a test of event</p>
+    <div id="div1" onclick="alert('You clicked me');">Click Me</div>
   </body>
 </html>
