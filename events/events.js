@@ -29,8 +29,8 @@ function showMsg(){
 //to a function.
 var button = document.getElementById('btn1');
 button.onclick = function(){
-  	alert('Clicked button');
-}
+  	alert("Clicked button");
+};
 //Using this method, the function is considered to belong to the element and so
 //runs within the scope of the element and the this attribute can be used.
 button.onclick = function(){
@@ -39,4 +39,26 @@ button.onclick = function(){
 
 button.onclick = null; //removes the event handler
 
-//DOM Level 2 Event handlers
+//DOM Level 2 Events: Specification for assignment and removal of event handlers
+//add an event handler to a button for the click event
+var button = document.getElementById("btn1");
+btn.addEventListener("click", function(){
+  alert('Clicked a button');
+}, false);
+//The last arguments indicates whether the event hadler is called during the 
+//capture phase(true) or during the bubble phase (false)
+//
+//By using DOM Level 2 method, multiple event handlers can be added. The event 
+//handlers fire in the order they are added.
+//removeEventListener() is used to remove event handlers added only using the 
+//addEventListener() method. It takes the same parameters as addEventHandler
+//and does not remove a function added anonymously.
+//So it is best to have a variable assignment to a function that is to be used in 
+//an event listener.
+
+var handler = function(){
+  alert('Called a fucntion in event handler');
+}
+btn.addEventListener("click", handler, false);
+btn.removeEventListener("click",handler,false); //removes the event listener
+
