@@ -62,3 +62,32 @@ var handler = function(){
 btn.addEventListener("click", handler, false);
 btn.removeEventListener("click",handler,false); //removes the event listener
 
+//The event object
+//An object that stores all relevant information gathered when an event is fired 
+//related to the DOM.
+//In DOM compliant browsers, the event object is passed in as the sole arg to an 
+//event handler(regardless of the method used to assign the event handler)
+
+
+var button = document.getElementById("btn1");
+btn.addEventListener("click", function(){
+  alert(event.type); //click
+}, false);
+
+//when an event is attached using HTML methods, the event object is available 
+//as variable called event.
+//Some members present in the event object.
+//bubbles; cancelable, currentTarget, defaultPrevented, detail, eventPhase
+//preventDefault(); stopImmediatePropagation(); stopPropagation(); target; 
+//trusted; type; view
+//
+
+//In an event handler, this object is always equal to the value of currentTarget 
+//property.
+div.addEventListener("click", function(){
+alert(this); //DOM Element event handler is attached to.
+});
+//The value of target and currentTarget are equal if the event handler is directly 
+//attached to the inteded element. Else, currentTarget may be the element that 
+//handled the event after bubbling.
+//
