@@ -90,4 +90,39 @@ alert(this); //DOM Element event handler is attached to.
 //The value of target and currentTarget are equal if the event handler is directly 
 //attached to the inteded element. Else, currentTarget may be the element that 
 //handled the event after bubbling.
-//
+
+//Using the type property to assign a single function to multiple events
+var btn = document.getElementById("btn");
+var handler = function(event){
+  switch(event.type){
+    case "click":
+      alert("Clicked");
+      break;
+    case "mouseover":
+      event.target.style.backgroundColor = "red";
+      break;
+    case "mouseout":
+      event.target.style.backgroundColor = "";
+  }
+}
+
+btn.onclick = handler;
+btn.onmouseover = handler;
+btn.onmouseout = handler;
+
+//preventing default action on an event
+var link = document.getElementById("myLink");
+link.onclick = function(event){
+  event.preventDefault(); //cancel default behavior of link navigating to a href
+  //when clicked. NB: This sets the events cancelable property to true
+}
+
+//stop an event from propagating, prevents event bubbling and capturing
+
+var btn = document.getElemementById("btn")
+btn.onclick = function(event){
+  alert("Clicked");
+  event.stopPropagation();// this will prevent the event from bubbling to 
+  //document.body
+};
+
